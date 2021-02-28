@@ -1,0 +1,90 @@
+{%extends 'blog/base1.html' %}
+{%load static%}
+
+		{%block content1%}
+    <!-- Start Banner Area -->
+    <section class="banner-area organic-breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+                <div class="col-first">
+                    <h1>Shopping Cart</h1>
+                    <nav class="d-flex align-items-center">
+                        <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="category.html">Cart</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Banner Area -->
+
+    <!--================Cart Area =================-->
+
+    <section class="cart_area">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    <table class="table">
+                      {% for message in messages %}
+                      <div class="alert alert-primary" role="alert">
+                         {{message}}
+                  </div>
+                      {% endfor %}
+                        <thead>
+                            <tr>
+                              <th scope="col">Order Id</th>
+                                <th scope="col">Product</th>
+																<th scope="col">quantity</th>
+																  <th scope="col">Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Order Status</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for order in order_list%}
+                            <tr>
+                              <td>
+                          <h5>   #VM{{order.id}} </h5>
+                        </td>
+                                <td>
+
+
+                                            <p>{{order.productname}}</p>
+
+
+                                </td>
+																<td>
+
+
+                                            <p>{{order.quantity}}</p>
+
+
+                                </td>
+																<td>
+
+
+																						<p>{{order.buyername}}</p>
+
+
+																</td>
+                                <td>
+                                    <h5>{{order.flataddress}}</h5>
+                                </td>
+
+                                <td>
+                                    <h5>{{order.orderstatus}}</h5>
+                                </td>
+                            </tr>
+                            {% endfor %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Cart Area =================-->
+
+    {%endblock%}

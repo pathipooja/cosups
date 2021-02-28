@@ -1,0 +1,115 @@
+{%extends 'blog/base1.html' %}
+{%load static%}
+
+		{%block content1%}
+	<section class="owl-carousel section_gap">
+		<!-- single product slide -->
+		<br><br><br><br>
+		<div class="single-product-slider">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-6 text-center">
+						<div class="section-title">
+							<h1>Latest Products</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore
+								magna aliqua.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<!-- single product -->
+					{%for post in post_list%}
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product">
+							<!-- <img class="img-fluid" src="{%static "img/product/p1.jpg" %}" alt=""> -->
+							<img class="img-fluid" src="	{{post.image.url}}" alt="" width="262" height="280">
+
+							<div class="product-details">
+							<a href="{{post.get_absolute_url}}"><h6>{{post.title}}</h6></a>
+								<div class="price">
+									<h6>{{post.product_price}}</h6>
+									<!-- <h6 class="l-through">$210.00</h6> -->
+								</div>
+								<div class="prd-bottom">
+
+									<a href="{{post.get_absolute_url}}" class="social-info">
+										<span class="ti-bag"></span>
+										<p class="hover-text">Buy now</p>
+									</a>
+									<a class="social-info">
+										<span class="lnr lnr-heart"></span>
+										<p class="hover-text">Wishlist</p>
+									</a>
+									<a href="" class="social-info">
+										<span class="lnr lnr-sync"></span>
+										<p class="hover-text">Share</p>
+									</a>
+									<a href="{{post.get_absolute_url}}" class="social-info">
+										<span class="lnr lnr-move"></span>
+										<p class="hover-text">view more</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+						{% endfor %}
+					<!-- end single product -->
+
+				</div>
+			</div>
+		</div>
+		<!-- single product slide -->
+
+	</section>
+	<!-- end product Area -->
+
+	<!-- start features Area -->
+	<section class="features-area section_gap">
+		<div class="container">
+			<div class="row features-inner">
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="img/features/f-icon1.png" alt="">
+						</div>
+						<h6>Free Delivery</h6>
+						<p>Free Shipping on all order</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="img/features/f-icon2.png" alt="">
+						</div>
+						<h6>Return Policy</h6>
+						<p>Free Shipping on all order</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="img/features/f-icon3.png" alt="">
+						</div>
+						<h6>24/7 Support</h6>
+						<p>Free Shipping on all order</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="img/features/f-icon4.png" alt="">
+						</div>
+						<h6>Secure Payment</h6>
+						<p>Free Shipping on all order</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end features Area -->
+  {%endblock%}

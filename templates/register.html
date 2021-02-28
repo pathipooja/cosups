@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registeration</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<style>
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="mx-auto" style="width: 500px;">
+    <h2 align=center>Register</h2>
+    <form method="post" class="was-validated row">
+        {% csrf_token %}
+        <div>
+          <table align="center" cellpadding="8" >
+            <tr>
+          <td>
+         <label  >Firstname</label></td>
+      <td>  <input class="form-control is-invalid" id="validationInput" type="text" name="first_name" placeholder="First Name"  required>
+</td>
+</tr>
+      <td>    <label >Last name</label></td>
+      <td>  <input class="form-control is-invalid" id="validationInput" type="text" name="last_name" placeholder="Last Name"  required>
+</td>
+      </tr>
+
+      <td>    <label >User name</label>
+      </td> <td> <input class="form-control is-invalid" id="validationInput" type="text" name="username" placeholder="Username"  required>
+    </td></tr>
+    <tr><td>    <label for="validationDefault01">Phone number</label>
+    </td> <td>   <input class="form-control is-invalid" id="validationInput" type="tel"  pattern="[0-9]{10}" name="phonenumber" placeholder="phonenumber"  required>
+    </td></tr>
+
+     <tr><td>   <label >Email</label>
+        </td> <td>   <input class="form-control is-invalid" id="validationInput" type="email" name="email" placeholder="email"  required>
+       <div class="invalid-feedback">
+        enter valid email id all details will be communicated using your mail
+      </div>
+    </td></tr> <tr><td>     <label for="validationDefault01">password</label>
+          </td> <td> <input class="form-control is-invalid" id="validationInput" type="password" name="password1" placeholder="Password"  required>
+    </td> <tr><td>  </td></tr> <tr><td><label for="validationDefault01">re-enter password</label>
+    </td> <td>   <input class="form-control is-invalid" id="validationInput" type="password" name="password2" placeholder="Confirm Password"  required>
+  </td></tr>
+  <tr><td>    <label for="validationDefault01">age</label>
+  </td> <td>   <input class="form-control is-invalid" id="validationInput" type="number" name="age" placeholder="age"  required>
+  </td></tr>
+  <tr><td>      <label for="validationDefault01">Insta handle</label>
+  </td> <td>   <input class="form-control is-invalid" id="validationInput" type="text" name="instahandle" placeholder="optional"  >
+   </td></tr>
+   <tr><td>      <label for="validationDefault01">College/school name</label>
+      </td> <td>   <input class="form-control is-invalid" id="validationInput" type="text" name="collegename" placeholder="collegename"  required>
+    </td></tr>
+    <tr><td>      <label for="validationDefault01">place of study</label>
+    </td> <td>   <input class="form-control is-invalid" id="validationInput" type="text" name="placeofstudy" placeholder="placeofstudy"  required>
+     </td></tr>
+     <tr><td>    <label for="validationDefault01">Year or class</label>
+    </td> <td>   <input class="form-control is-invalid" id="validationInput" type="number" name="year_class" placeholder="year_class"  required>
+    </td></tr> <tr><td>   <label for="validationDefault01">Field_of_study</label>
+
+  </td> <td>   <input class="form-control is-invalid" id="validationInput" type="text" name="Field_of_study" placeholder="Field_of_study"  required>
+
+  </td></tr> <tr><td> <label for="validationDefault01">Hobbies</label>
+  </td> <td> <input class="form-control is-invalid" id="validationInput" type="text" name="Hobbies" placeholder="Hobbies"  required>
+  </td></tr></table>
+&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp    <input  class="btn btn-success" type="Submit">
+
+
+
+
+      <h4>  {% for message in messages %}<h4>
+        {{message}}
+        {% endfor %}
+
+   </div>
+</div>
+    </form>
+</div>
+    </div>
+</body>
+</html>

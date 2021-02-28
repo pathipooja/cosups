@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!--<title>Skill Battle</title>-->
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+  <!-- <link rel="stylesheet" href="{%static "css/blog1.css" %}"> -->
+  <!-- Favicons -->
+
+  <!--<link href="{%static "assets/img/favicon.jpeg" %}" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="{%static "assets/vendor/bootstrap/css/bootstrap.min.css"  %}">
+  <link rel="stylesheet" href="{%static "assets/vendor/icofont/icofont.min.css" %}" >
+  <link href="{%static "assets/vendor/remixicon/remixicon.css" %}" rel="stylesheet">
+  <link href="{%static "assets/vendor/boxicons/css/boxicons.min.css" %}" rel="stylesheet">
+  <link href="{%static "assets/vendor/owl.carousel/assets/owl.carousel.min.css" %}" rel="stylesheet">
+  <link href="{%static "assets/vendor/venobox/venobox.css" %}" rel="stylesheet">
+  <link href="{%static "assets/vendor/aos/aos.css" %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{%static "css/style.css"  %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Vesperr - v2.0.0
+  * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo mr-auto">
+
+
+        <h1 class="text-light"><a  href=""  ><span>Cosups</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+          <!--<li><a href="#more-services">Ongoing Battles</a></li>-->
+          {% if user.is_authenticated %}
+              <li class="nav-item"><a class="nav-link" >Hello, {{user.username}}</a></li>
+
+                	<li class="nav-item"><a class="nav-link"  href="/logout">logout</a> </li>
+                  	<li class="nav-item"><a class="nav-link"  href="/change-password">Reset Password</a> </li>
+										<li class="nav-item"><a class="nav-link"  href="/refer-and-earn">Refer and earn</a> </li>
+                    <li class="nav-item"><a class="nav-link" href="/earn_credits">Earn credits</a></li>
+                    <!--<li><a href="#services">Completed Battles</a></li>-->
+                    {%else%}
+                        <li class="nav-item"><a class="nav-link" >Welcome, Have a great experience</a></li>
+                      {% endif %}
+		  <!--<li><a href="#features">Battles</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#faq">faq</a></li>-->
+
+          <!-- <li class="drop-down"><a href="">Team</a> -->
+            <!-- <ul> -->
+              <!--  <li><a href="#">Drop Down 1</a></li> -->
+              <!--  <li class="drop-down"><a href="#">Drop Down 2</a> -->
+                <!-- <ul> -->
+                  <!-- <li><a href="#">Deep Drop Down 1</a></li> -->
+                  <!-- <li><a href="#">Deep Drop Down 2</a></li> -->
+                  <!-- <li><a href="#">Deep Drop Down 3</a></li> -->
+                  <!-- <li><a href="#">Deep Drop Down 4</a></li> -->
+                  <!--  <li><a href="#">Deep Drop Down 5</a></li> -->
+                <!--  </ul> -->
+              <!--  </li> -->
+              <!--  <li><a href="#">Drop Down 3</a></li> -->
+              <!--  <li><a href="#">Drop Down 4</a></li> -->
+              <!--  <li><a href="#">Drop Down 5</a></li> -->
+            <!--  </ul> -->
+          <!-- </li> -->
+
+          <!--<li><a href="#contact">Contact</a></li>
+          {% if user.is_authenticated %}
+      				<li><a href="#">Hello, {{user.first_name}}</a></li>
+      			       <li class="get-started"> <a class="btn btn-primary" href="/logout" role="button">logout</a></li>
+      			        {% else %}
+                    <li class="get-started">    <a  href="/login" role="button">Login/Signup</a></li>
+          {% endif %}
+        </ul>
+      </nav>--><!-- .nav-menu -->
+
+    <!--</div>-->
+  </header><!-- End Header -->
+  <br>
+  <!-- ======= Hero Section ======= -->
+  <!--<section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">Cosups</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">For Every Art Their Is A Price</h2>
+  {% if not user.is_authenticated %}
+      <h3 data-aos="fade-up" data-aos-delay="400">Login/Signup to participate</h3>
+          <div data-aos="fade-up" data-aos-delay="800">
+            <a href="/login" class="btn-get-started scrollto">Login/Signup</a>
+          </div>
+          {% endif %}
+           <div class="contact">
+            <div class="section-title" data-aos="fade-up">
+           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-about">
+                <p>Reach us through</p>
+                   <div class="row justify-content-center">
+
+              <div class="social-links">
+                <a href="https://wa.me/919014534883" target="_blank" class="whatsapp"><i class="icofont-whatsapp"></i></a>
+                <a href="https://fb.me/skillbattlecosups" target="_blank" class="facebook"><i class="icofont-facebook"></i></a>
+                <a href="https://www.instagram.com/skillbattle" target="_blank" class="instagram"><i class="icofont-instagram"></i></a>
+                <a href="mailto:skillbattlecosups@gmail.com" target="_blank" class="email"><i class="icofont-email"></i></a>
+              </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+          <img src="{%static "assets/img/hero-img.png" %}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section>--><!-- End Hero -->
+
+  <!--<main id="main">-->
+
+    <!-- ======= Clients Section ======= -->
+    <!-- <section id="clients" class="clients clients"> -->
+      <!-- <div class="container"> -->
+
+        <!-- <div class="row"> -->
+
+          <!-- <div class="col-lg-2 col-md-4 col-6"> -->
+            <!-- <img src="assets/img/clients/client-1.png" class="img-fluid" alt="" data-aos="zoom-in"> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-2 col-md-4 col-6"> -->
+            <!-- <img src="assets/img/clients/client-2.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100"> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-2 col-md-4 col-6"> -->
+            <!-- <img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200"> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-2 col-md-4 col-6"> -->
+            <!-- <img src="assets/img/clients/client-4.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="300"> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-2 col-md-4 col-6"> -->
+            <!-- <img src="assets/img/clients/client-5.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="400"> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-2 col-md-4 col-6"> -->
+            <!-- <img src="assets/img/clients/client-6.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="500"> -->
+          <!-- </div> -->
+
+        <!-- </div> -->
+
+      <!-- </div> -->
+    <!-- </section><!-- End Clients Section -->
+
+
+    <!-- ======= Services Section ======= -->
+
+    <!-- ======= More Services Section ======= -->
+    <!--<section id="more-services" class="more-services">
+      <div class="container">
+	    <div class="section-title" data-aos="fade-up">
+          <h2>Ongoing Battles</h2>
+          <p>You can participate in as many as you can.</p>
+        </div>
+
+        <div class="row">
+          {%for post in post_list%}
+          {% if not post.completed %}
+          <div class="col-md-6 d-flex align-items-stretch">
+            <div class="card" style='background-image: url("{{post.image.url}}");' data-aos="fade-up" data-aos-delay="100">
+              <div class="card-body">
+                <h5 class="card-title"><a href="">{{post.title}}</a></h5>
+                <p class="card-text">{{post.body|truncatewords:30|linebreaks}}</p>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% if user.is_authenticated %}
+                    <input type="hidden" id="username" name="username" value={{user.username}} >
+                    <input type="hidden" id="email" name="email" value={{user.email}} >
+                    <input type="hidden" name="part" value="no">
+                    <input type="hidden" id="contest_title" name="contest_title" value={{post.slug}} required>
+
+            {% if post.submit_on %}
+                {%for part in part_list%}
+                  {% ifequal part.username user.username %}
+                  {% ifequal part.contest_title post.slug %}
+                      <input type="text" name="drive_link" required>
+                  <input  class="btn btn-success" type="Submit">
+                  {%for form1 in file_list%}
+                    {% ifequal form1.username part.username %}
+                    {% ifequal form1.contest_title part.contest_title%}
+                    <div class="alert alert-primary" role="alert">
+                       thanks for submitting the file
+                        </div>
+                      {% endifequal %}
+                    {% endifequal %}
+                    {% endfor %}
+                    {% endifequal %}
+                  {% endifequal %}
+                  {% endfor %}
+                {% endif %}
+                  {% else %}
+                  <a class="btn btn-primary" href="/register" role="button">register</a>
+                  <a class="btn btn-primary" href="/login" role="button">login</a>
+                  {% endif %}
+
+                  </form>
+                {% if not post.submit_on %}
+                  <form method="post">
+                      {% csrf_token %}
+                      {% if user.is_authenticated %}
+                      <input type="hidden" id="username" name="username" value={{user.username}} >
+                      <input type="hidden" id="email" name="email" value={{user.email}} >
+                      <input type="hidden" id="contest_title" name="contest_title" value={{post.slug}} required>
+                      <input type="hidden" name="part" value="yes">
+                      <button  href="#more-services" class="btn btn-primary" type="submit">participate</button>
+                      <h6>
+                    click on participate if you are interested/want to submit
+                  </h6>
+                  {%for part in part_list%}
+                    {% ifequal part.username user.username %}
+                    {% ifequal part.contest_title post.slug %}
+                      <div class="alert alert-primary" role="alert">
+                      Thanks for participating
+                    </div>
+                    {% endifequal %}
+                  {% endifequal %}
+                  {% endfor %}
+                    {% endif %}
+                    </form>
+                    {% endif %}
+
+                <div class="read-more"><a href="{{post.get_absolute_url}}"><i class="icofont-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+          </div>-->
+
+
+          <!-- <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="card" style='background-image: url("assets/img/more-services-2.jpg");' data-aos="fade-up" data-aos-delay="200">
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Limere Radses</a></h5>
+                <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem.</p>
+                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 d-flex align-items-stretch mt-4">
+            <div class="card" style='background-image: url("assets/img/more-services-3.jpg");' data-aos="fade-up" data-aos-delay="100">
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Nive Lodo</a></h5>
+                <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores.</p>
+                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-stretch mt-4">
+            <div class="card" style='background-image: url("assets/img/more-services-4.jpg");' data-aos="fade-up" data-aos-delay="200">
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Pale Treda</a></h5>
+                <p class="card-text">Nostrum eum sed et autem dolorum perspiciatis. Magni porro quisquam laudantium voluptatem.</p>
+                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+          </div>
+            {% endif %}
+          {%endfor%}
+        </div>
+
+      </div>
+    </section>--><!-- End More Services Section -->
+    <section id="services" class="more-services">
+      <div class="container">
+      <div class="section-title" data-aos="fade-up">
+          <h2>Completed Battles</h2>
+          <p>Recently Completed Battles</p>
+        </div>
+
+        <div class="row">
+          {%for post in post_list%}
+          {% if  post.completed %}
+          <div class="col-md-6 d-flex align-items-stretch">
+            <div class="card" style='background-image: url("{{post.image.url}}");' data-aos="fade-up" data-aos-delay="100">
+              <div class="card-body">
+                <h5 class="card-title"><a href="">{{post.title}}</a></h5>
+                <p class="card-text">{{post.body|truncatewords:30|linebreaks}}</p>
+                <div class="read-more"><a href="{{post.get_absolute_url}}"><i class="icofont-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        {%endfor%}
+    </div>
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <!--<section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+            <p>
+              SkillBattle is a platform which explore the hobbies of students thus creating a competition which enables the students to participate and unleash their skills.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> We value every art submitted and award them.</li>
+              <li><i class="ri-check-double-line"></i> Largest growing student network with similar skill set.</li>
+              <li><i class="ri-check-double-line"></i> We feel that it is worth giving a shot at your hobbies</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <p>
+              This is the right platform for the students who can develop their career in their hobby path. Technology is important but while 50% students concentrate on technologies other 50% have different skills, this platform helps such students to polish their skills more.
+            </p>
+            <a href="#" class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section>--><!-- End About Us Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <!--<section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row">
+          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
+            <img src="{%static "assets/img/counts-img.svg" %}" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
+            <div class="content d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="icofont-simple-smile"></i>
+                    <span data-toggle="counter-up">65</span>
+                    <p><strong>Happy participants</strong> These many participants are satisfied with price they got for their art.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="icofont-document-folder"></i>
+                    <span data-toggle="counter-up">109</span>
+                    <p><strong>Submitted Arts</strong> Number of arts in different categories submitted till now.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="icofont-clock-time"></i>
+                    <span data-toggle="counter-up">10000</span>
+                    <p><strong>working hours</strong> Students worked these mnany hours so far.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="icofont-award"></i>
+                    <span data-toggle="counter-up">5</span>
+                    <p><strong>Judges</strong> five judges and still counting. If you wanna join as judge please write to our mail.</p>
+                  </div>
+                </div>
+              </div>
+            </div>End .content
+          </div>
+        </div>
+
+      </div>
+    </section>--><!-- End Counts Section -->
+
+
+    <!-- ======= Testimonials Section ======= -->
+    <!--<section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Testimonials</h2>
+          <p>Studnets participated in previous battles.</p>
+        </div>
+
+        <div class="owl-carousel testimonials-carousel" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{%static "assets/img/testimonials/testimonials-1.jpg"%}" class="testimonial-img" alt="">
+              <h3>Niharika Kotagiri</h3>
+              <h4>Fashion redesign competition</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+               It was great a experience!
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{%static "assets/img/testimonials/shweta.jpg"%}" class="testimonial-img" alt="">
+                <h3>Shweta kalyankar</h3>
+                <h4>recycling competition</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                 it's a great experience in participating in this interesting competition, I won 2nd prize and this is a creative use of lockdown time.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{%static "assets/img/testimonials/girl.png" %}" class="testimonial-img" alt="">
+              <h3>Maukthika chinmai</h3>
+              <h4>Singing</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                This contest has given me a great opportunity to showcase my talent and organizers have handed it the best way possible so aaud guys great job i loved it
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{%static "assets/img/testimonials/ruchitha.jpeg" %}" class="testimonial-img" alt="">
+              <h3>Ruchita Valaboju</h3>
+              <h4>Singing</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                It was nice participating in this skill battle. The rules were quite flexible and it was a good boost to my confidence.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{%static "assets/img/testimonials/girl.png" %}" class="testimonial-img" alt="">
+              <h3>nuzhath fathima</h3>
+              <h4>Photo To Paint Competetion</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Thank you for this great opportunity. I never thought my art could bring me a prize.I hope you continue conducting such exciting competitions and help us convert our hobbies into great skills.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{%static "assets/img/testimonials/boy.png" %}" class="testimonial-img" alt="">
+              <h3>Vamshi Raj</h3>
+              <h4>web/app developemnt</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Firstly a big Thank You for conducting such a competetion..All those PubG competetions,tiktok challenges were of literally no use..This particular competetion by you have boosted our skills and develop a little better in our areas of talent...We are expecting many more such competetions in the future too😊
+
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{%static "assets/img/testimonials/praneeth.jpg"%}" class="testimonial-img" alt="">
+              <h3>Praneeth alugunuri</h3>
+              <h4>Art Music competition</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+               Skillbattle is a very good platform where it has brought up the versatility of the many participants, It was a great step taken by the team and awarding the every art was the good concept by you which makes the youth to be more encouraged towards their talent apart from their busy career!
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+           <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{%static "assets/img/testimonials/nivedita.jpg"%}" class="testimonial-img" alt="">
+                <h3>Nivedita</h3>
+                <h4>recycling competition</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I just want to thank you guys @skillbattle for organizing these types of competition in this time of chaos and pandemic for people like us to show our skills and not only that but also appreciating and giving cash prizes.
+ Your concept about recycling and giving a bigger platform to such thing is great in a different way.
+ I am obliged to be a part of this competition. Thankyou so much for choosing me as a winner
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="{%static "assets/img/testimonials/sakshi.png"%}" class="testimonial-img" alt="">
+                  <h3>Sakshi Seti</h3>
+                  <h4>recycling competition</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    I'm grateful that @skillbattle is providing a platform to showcase our skills and talent during the state of pandemic and allowing people like me to be a part of such competitions.
+    For this time , it was the concept of upcycling the material we have at home during lockdown and shape them differently.
+    Iam thankful to skillbattle as through them I feel I was able to contribute happiness and encouragement in the society .
+    Not just that I won the 3rd prize .
+    THANK YOU skillbattle .    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+
+
+
+
+
+
+
+        </div>
+
+      </div>
+    </section>--><!-- End Testimonials Section -->
+	 <!-- ======= Features Section ======= -->
+    <!--<section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>BATTLES</h2>
+          <p>The battles we conduct regularly</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-3 col-md-4">
+            <div class="icon-box">
+              <i class="ri-store-line" style="color: #ffbb2c;"></i>
+              <h3>Plan a Event</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+              <h3>Sing a Song</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+              <h3>Dance High</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+            <div class="icon-box">
+              <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
+              <h3><a href="">Stand-up-comedy</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <i class="ri-database-2-line" style="color: #47aeff;"></i>
+              <h3><a href="">Upcycle fashion</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
+              <h3><a href="">Music-Instrumental</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+              <h3><a href="">VFX/Videography</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
+              <h3><a href="">Recycled art Competition</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <i class="ri-anchor-line" style="color: #b2904f;"></i>
+              <h3><a href="">Photo-to-paint</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <i class="ri-disc-line" style="color: #b20969;"></i>
+              <h3><a href="">Digital Design</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <i class="ri-base-station-line" style="color: #ff5828;"></i>
+              <h3><a href="">Photography</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
+              <h3><a href="">Web/App design</a></h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>--><!-- End Features Section -->
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <!-- <section id="portfolio" class="portfolio"> -->
+      <!-- <div class="container"> -->
+
+        <!-- <div class="section-title" data-aos="fade-up"> -->
+          <!-- <h2>Portfolio</h2> -->
+          <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p> -->
+        <!-- </div> -->
+
+        <!-- <div class="row" data-aos="fade-up" data-aos-delay="200"> -->
+          <!-- <div class="col-lg-12 d-flex justify-content-center"> -->
+            <!-- <ul id="portfolio-flters"> -->
+              <!-- <li data-filter="*" class="filter-active">All</li> -->
+              <!-- <li data-filter=".filter-app">App</li> -->
+              <!-- <li data-filter=".filter-card">Card</li> -->
+              <!-- <li data-filter=".filter-web">Web</li> -->
+            <!-- </ul> -->
+          <!-- </div> -->
+        <!-- </div> -->
+
+        <!-- <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="400"> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app"> -->
+            <!-- <div class="portfolio-wrap"> -->
+              <!-- <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""> -->
+              <!-- <div class="portfolio-info"> -->
+                <!-- <h4>App 1</h4> -->
+                <!-- <p>App</p> -->
+                <!-- <div class="portfolio-links"> -->
+                  <!-- <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a> -->
+                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web"> -->
+            <!-- <div class="portfolio-wrap"> -->
+              <!-- <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""> -->
+              <!-- <div class="portfolio-info"> -->
+                <!-- <h4>Web 3</h4> -->
+                <!-- <p>Web</p> -->
+                <!-- <div class="portfolio-links"> -->
+                  <!-- <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a> -->
+                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app"> -->
+            <!-- <div class="portfolio-wrap"> -->
+              <!-- <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""> -->
+              <!-- <div class="portfolio-info"> -->
+                <!-- <h4>App 2</h4> -->
+                <!-- <p>App</p> -->
+                <!-- <div class="portfolio-links"> -->
+                  <!-- <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a> -->
+                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card"> -->
+            <!-- <div class="portfolio-wrap"> -->
+              <!-- <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""> -->
+              <!-- <div class="portfolio-info"> -->
+                <!-- <h4>Card 2</h4> -->
+                <!-- <p>Card</p> -->
+                <!-- <div class="portfolio-links"> -->
+                  <!-- <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="bx bx-plus"></i></a> -->
+                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web"> -->
+            <!-- <div class="portfolio-wrap"> -->
+              <!-- <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt=""> -->
+              <!-- <div class="portfolio-info"> -->
+                <!-- <h4>Web 2</h4> -->
+                <!-- <p>Web</p> -->
+                <!-- <div class="portfolio-links"> -->
+                  <!-- <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="bx bx-plus"></i></a> -->
+                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app"> -->
+            <!-- <div class="portfolio-wrap"> -->
+              <!-- <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt=""> -->
+              <!-- <div class="portfolio-info"> -->
+                <!-- <h4>App 3</h4> -->
+                <!-- <p>App</p> -->
+                <!-- <div class="portfolio-links"> -->
+                  <!-- <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a> -->
+                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card"> -->
+            <!-- <div class="portfolio-wrap"> -->
+              <!-- <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt=""> -->
+              <!-- <div class="portfolio-info"> -->
+                <!-- <h4>Card 1</h4> -->
+                <!-- <p>Card</p> -->
+                <!-- <div class="portfolio-links"> -->
+                  <!-- <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a> -->
+                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card"> -->
+            <!-- <div class="portfolio-wrap"> -->
+              <!-- <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt=""> -->
+              <!-- <div class="portfolio-info"> -->
+                <!-- <h4>Card 3</h4> -->
+                <!-- <p>Card</p> -->
+                <!-- <div class="portfolio-links"> -->
+                  <!-- <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a> -->
+                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web"> -->
+            <!-- <div class="portfolio-wrap"> -->
+              <!-- <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt=""> -->
+              <!-- <div class="portfolio-info"> -->
+                <!-- <h4>Web 3</h4> -->
+                <!-- <p>Web</p> -->
+                <!-- <div class="portfolio-links"> -->
+                  <!-- <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a> -->
+                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
+        <!-- </div> -->
+
+      <!-- </div> -->
+    <!-- </section><!-- End Portfolio Section -->
+
+    <!-- ======= Team Section ======= -->
+    <!--<section id="team" class="team section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Team</h2>
+          <p>We beleive in Team-work.</p>
+        </div>
+          <div style="align:center;">
+        <div class="row justify-content-center" >
+
+           <div class="col-lg-3 col-md-6 d-flex align-items-stretch"> -->
+            <!-- <div class="member" data-aos="fade-up" data-aos-delay="100"> -->
+              <!-- <div class="member-img"> -->
+                <!-- <img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""> -->
+                <!-- <div class="social"> -->
+                  <!-- <a href=""><i class="icofont-twitter"></i></a> -->
+                  <!-- <a href=""><i class="icofont-facebook"></i></a> -->
+                  <!-- <a href=""><i class="icofont-instagram"></i></a> -->
+                  <!-- <a href=""><i class="icofont-linkedin"></i></a> -->
+                <!-- </div> -->
+              <!-- </div> -->
+              <!-- <div class="member-info"> -->
+                <!-- <h4>Walter White</h4> -->
+                <!-- <span>Chief Executive Officer</span> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
+          <!--<div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <img src="{%static "assets/img/team/madhu.jpeg"%}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://wa.me/919014534883" target="_blank"><i class="icofont-whatsapp"></i></a>
+                  <a href="https://fb.me/skillbattlecosups" target="_blank" ><i class="icofont-facebook"></i></a>
+                  <a href="https://www.instagram.com/skillbattle" target="_blank" ><i class="icofont-instagram"></i></a>
+                  <a href="mailto:madhu091227@gmail.com" target="_blank"><i class="icofont-email"></i></a>
+
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Madhavi krishna .P</h4>
+                <span>Manager</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="{%static "assets/img/team/jahnavi.jpeg" %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://wa.me/919014534883" target="_blank"><i class="icofont-whatsapp"></i></a>
+                  <a href="https://fb.me/skillbattlecosups" target="_blank" ><i class="icofont-facebook"></i></a>
+                  <a href="https://www.instagram.com/jahnavi_chennuri" target="_blank" ><i class="icofont-instagram"></i></a>
+                  <a href="mailto:chennurijahnavi5@gmail.com" target="_blank"><i class="icofont-email"></i></a>
+
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Jahnavi chennuri</h4>
+                <span>Associate</span>
+              </div>
+            </div>
+          </div>
+
+           <div class="col-lg-3 col-md-6 d-flex align-items-stretch"> -->
+            <!-- <div class="member" data-aos="fade-up" data-aos-delay="400"> -->
+              <!-- <div class="member-img"> -->
+                <!-- <img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""> -->
+                <!-- <div class="social"> -->
+                  <!-- <a href=""><i class="icofont-twitter"></i></a> -->
+                  <!-- <a href=""><i class="icofont-facebook"></i></a> -->
+                  <!-- <a href=""><i class="icofont-instagram"></i></a> -->
+                  <!-- <a href=""><i class="icofont-linkedin"></i></a> -->
+                <!-- </div> -->
+              <!-- </div> -->
+              <!-- <div class="member-info"> -->
+                <!-- <h4>Amanda Jepson</h4> -->
+                <!-- <span>Accountant</span> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+ <!-- </div>
+        </div>
+
+      </div>
+    </section>--><!-- End Team Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    <!-- <section id="pricing" class="pricing"> -->
+      <!-- <div class="container"> -->
+
+        <!-- <div class="section-title"> -->
+          <!-- <h2>Pricing</h2> -->
+          <!-- <p>Sit sint consectetur velit nemo qui impedit suscipit alias ea</p> -->
+        <!-- </div> -->
+
+        <!-- <div class="row"> -->
+
+          <!-- <div class="col-lg-4 col-md-6"> -->
+            <!-- <div class="box" data-aos="zoom-in-right" data-aos-delay="200"> -->
+              <!-- <h3>Free</h3> -->
+              <!-- <h4><sup>$</sup>0<span> / month</span></h4> -->
+              <!-- <ul> -->
+                <!-- <li>Aida dere</li> -->
+                <!-- <li>Nec feugiat nisl</li> -->
+                <!-- <li>Nulla at volutpat dola</li> -->
+                <!-- <li class="na">Pharetra massa</li> -->
+                <!-- <li class="na">Massa ultricies mi</li> -->
+              <!-- </ul> -->
+              <!-- <div class="btn-wrap"> -->
+                <!-- <a href="#" class="btn-buy">Buy Now</a> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 mt-4 mt-md-0"> -->
+            <!-- <div class="box recommended" data-aos="zoom-in" data-aos-delay="100"> -->
+              <!-- <h3>Business</h3> -->
+              <!-- <h4><sup>$</sup>19<span> / month</span></h4> -->
+              <!-- <ul> -->
+                <!-- <li>Aida dere</li> -->
+                <!-- <li>Nec feugiat nisl</li> -->
+                <!-- <li>Nulla at volutpat dola</li> -->
+                <!-- <li>Pharetra massa</li> -->
+                <!-- <li class="na">Massa ultricies mi</li> -->
+              <!-- </ul> -->
+              <!-- <div class="btn-wrap"> -->
+                <!-- <a href="#" class="btn-buy">Buy Now</a> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 mt-4 mt-lg-0"> -->
+            <!-- <div class="box" data-aos="zoom-in-left" data-aos-delay="200"> -->
+              <!-- <h3>Developer</h3> -->
+              <!-- <h4><sup>$</sup>29<span> / month</span></h4> -->
+              <!-- <ul> -->
+                <!-- <li>Aida dere</li> -->
+                <!-- <li>Nec feugiat nisl</li> -->
+                <!-- <li>Nulla at volutpat dola</li> -->
+                <!-- <li>Pharetra massa</li> -->
+                <!-- <li>Massa ultricies mi</li> -->
+              <!-- </ul> -->
+              <!-- <div class="btn-wrap"> -->
+                <!-- <a href="#" class="btn-buy">Buy Now</a> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
+        <!-- </div> -->
+
+      <!-- </div> -->
+    <!-- </section><!-- End Pricing Section -->
+
+    <!-- ======= F.A.Q Section ======= -->
+   <!-- <section id="faq" class="faq">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>Is there is any limitation for the person to participate in only one competition he/she can participate in as many as he/she can?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              No Limitation.
+            </p>
+          </div>
+        </div> End F.A.Q Item-->
+
+        <!--<div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>Everyone who participates gets a prize?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Yes but only if you meet all the requiremnts(terms and coditions) for that battle.
+            </p>
+          </div>
+        </div>--><!-- End F.A.Q Item-->
+
+        <!--<div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>How will we get prizes?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Prize/Gift vouchers are sent directly to your mail so the organizer is not responsible for the wrong mail id given.
+            </p>
+          </div>
+        </div>--><!-- End F.A.Q Item-->
+
+        <!--<div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>What if any copied content is found?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              If any copied content is found then that person is disqualified from competitionand his/her product or skill will not be considered for further judgement.
+            </p>
+          </div>
+        </div>--><!-- End F.A.Q Item-->
+
+        <!--<div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>Is time lapse video must?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Yes it is considered as proof for some arts but just a video of a minute is sufficient.
+            </p>
+          </div>
+        </div>--><!-- End F.A.Q Item-->
+
+      <!--</div>
+    </section>--><!-- End F.A.Q Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <!--<section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Contact Us</h2>
+        </div>
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-about">
+              <h3>SkillBattle</h3>
+              <p>Reach us through</p>
+              <div class="social-links">
+                <a href="https://wa.me/919014534883" target="_blank" class="whatsapp"><i class="icofont-whatsapp"></i></a>
+                <a href="https://fb.me/skillbattlecosups" target="_blank" class="facebook"><i class="icofont-facebook"></i></a>
+                <a href="https://www.instagram.com/skillbattle" target="_blank" class="instagram"><i class="icofont-instagram"></i></a>
+                <a href="mailto:skillbattlecosups@gmail.com" target="_blank" class="email"><i class="icofont-email"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="info">
+              <div>
+                <i class="ri-map-pin-line"></i>
+                <p>Bowenpally<br>Hyderabad</p>
+              </div>
+
+              <div>
+                <i class="ri-mail-send-line"></i>
+                <p>skillbattlecosups@gmail.com</p>
+              </div>
+
+              <div>
+                <i class="ri-phone-line"></i>
+                <p>+919014534883</p>
+              </div>
+
+            </div>
+          </div>-->
+
+          <!-- <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div> -->
+
+        <!--</div>
+
+      </div>
+    </section>--><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            &copy; Copyright <strong>Cosups Private Limited</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+       <!-- <div class="col-lg-6">
+          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+            <a href="#intro" class="scrollto">Home</a>
+            <a href="#about" class="scrollto">About</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>--><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{%static "assets/vendor/jquery/jquery.min.js" %}"></script>
+  <script src="{%static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+  <script src="{%static "assets/vendor/jquery.easing/jquery.easing.min.js" %}"></script>
+  <script src="{%static "assets/vendor/php-email-form/validate.js" %}"></script>
+  <script src="{%static "assets/vendor/waypoints/jquery.waypoints.min.js" %}"></script>
+  <script src="{%static "assets/vendor/counterup/counterup.min.js" %}"></script>
+  <script src="{%static "assets/vendor/owl.carousel/owl.carousel.min.js" %}"></script>
+  <script src="{%static "assets/vendor/isotope-layout/isotope.pkgd.min.js" %}"></script>
+  <script src="{%static "assets/vendor/venobox/venobox.min.js" %}"></script>
+  <script src="{%static "assets/vendor/aos/aos.js" %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{%static "assets/js/main.js" %}"></script>
+
+</body>
+
+</html>

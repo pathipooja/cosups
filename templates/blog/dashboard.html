@@ -1,0 +1,26 @@
+{%extends 'blog/base.html' %}
+{%block title_block%}BLOG HOME PAGE{%endblock%}
+    {%block content%}
+      <h1>BLOGS</h1>
+      <table style="width:100%" border="1">
+  <tr>
+    <th>Order Id</th>
+    <th>Product name</th>
+    <th>Address</th>
+      <th>Status</th>
+  </tr>
+
+
+
+      {%for order in order_list%}
+      <tr>
+        <td>#VM{{order.id}}</td>
+        <td>{{order.productname}}</td>
+        <td>{{order.flataddress}}</td>
+        <td>{{order.orderstatus}}</td>
+      </tr>
+
+
+      {%endfor%}
+      </table>
+    {%endblock%}

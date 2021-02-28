@@ -1,0 +1,35 @@
+{%extends 'blog/base.html' %}
+{%block title_block%}BLOG HOME PAGE{%endblock%}
+    {%block content%}
+      <h1>BLOGS</h1>
+      {% for message in messages %}
+      <div class="alert alert-danger" role="alert">
+         {{message}}
+</div>
+
+      {% endfor %}
+      {%for post in post_list%}
+          <a href="{{post.get_absolute_url}}"><h2>{{post.title}}</h2></a>
+          <p id='date'>Published on {{post.publish}} by {{post.author|title}}</p>
+          {{post.body|truncatewords:30|linebreaks}}
+          <!-- <form method="post">
+                    {% csrf_token %}
+
+          <input type="hidden" id="username" name="username" value={{user.username}} >
+                  <input type="hidden" id="product_name" name="product_name" value={{post.title}} required>
+                  <input type="hidden" id="address" name="address" value="provided address by dealer" >
+                    <input type="text" name="flatnumber" required>
+                <input  class="btn btn-success" type="Submit">
+                </form>
+                <form method="post">
+                          {% csrf_token %}
+
+                <input type="hidden" id="username" name="username" value={{user.username}} >
+                        <input type="hidden" id="product_name" name="product_name" value={{post.title}} required>
+                        <input type="hidden" id="address" name="address" value="provided address by dealer" >
+                          <input type="hidden" id="flatnumber" name="flatnumber" value="self" >
+
+                      <input  class="btn btn-success" value="Get me sample" type="Submit">
+                      </form> -->
+      {%endfor%}
+    {%endblock%}

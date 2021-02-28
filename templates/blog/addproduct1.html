@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7
+/css/bootstrap.min.css" integrity="sha384-
+BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" c
+rossorigin="anonymous">
+<link rel="stylesheet" href="{% static "css/demo4.css" %}">
+<title></title>
+</head>
+ <body>
+<div class="container" align='center'>
+ <h1>Add your product</h1><hr>
+ <form method="post">
+<!-- {{form.as_p}} -->
+{% csrf_token %}
+{{ form.non_field_errors }}
+<div class="fieldWrapper">
+    {{ form.title.errors }}
+    <label for="{{ form.title.id_for_label }}">Product Title:</label>
+    {{ form.title }}
+</div>
+<div class="fieldWrapper">
+    {{ form.product_price.errors }}
+    <label for="{{ form.product_price.id_for_label }}">Product price:</label>
+    {{ form.product_price }}
+</div>
+<div class="fieldWrapper">
+    {{ form.product_price.errors }}
+    <label for="{{ form.product_details.id_for_label }}">Product details:</label>
+    {{ form.product_details }}
+</div>
+<div class="fieldWrapper">
+    {{ form.image.errors }}
+    <label for="{{ form.image.id_for_label }}">Image:</label>
+    {{ form.image }}
+</div>
+
+
+
+<input type="submit" class="btn btn-primary" value="Submit Feedback">
+</form>
+</div>
+</body>
+ </html>
